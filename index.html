@@ -6,13 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zzhangzz.github.io">
-  <title>Hexo</title>
+  <title>ZzhBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="记录生活">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="ZzhBlog">
 <meta property="og:url" content="https://zzhangzz.github.io/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="ZzhBlog">
 <meta property="og:description" content="记录生活">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="zzh">
@@ -159,23 +159,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h1><h2 id="1-什么是线性规划"><a href="#1-什么是线性规划" class="headerlink" title="1.什么是线性规划"></a>1.什么是线性规划</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><font size=3>在社会的日常生产实践中，经常会遇到如何利用有限的资源来安排生产，从而取得最大的经济效益的问题。这类问题在运筹学中叫做数学规划，而线性规划是数学规划中的一个重要的分支。</font></p>
-<h2 id="2-线性规划问题的实例与定义。"><a href="#2-线性规划问题的实例与定义。" class="headerlink" title="2.线性规划问题的实例与定义。"></a>2.线性规划问题的实例与定义。</h2><p><font size=3><strong>例题</strong>：某机床厂生产甲、乙两种机床，每台销售后的利润为4000元与3000元。生产甲机床需要用A、B机器加工，加工时间分别为每台2h与1h；生产乙机床需要用A、B、C三种机器加工，加工时间为每台各1h。若每天可用于加工的机器时数分别为A机器10h，B机器8h，C机器7h，问该厂应生产甲、乙机床各多少台，才能使利润最大？<br><br><strong>解析</strong>：设生产x台甲机床，生产y台乙机床，总利润为z。<br>则根据题意x，y应满足：<br><br><br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">max \ z \ &#x3D;4000x+3000y</span><br><span class="line"></span><br><span class="line">s.t. \left\&#123;</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">2x+y &amp; \le &amp; \ 10 \\</span><br><span class="line">x+y &amp; \le &amp; \ 8 \\</span><br><span class="line">y &amp; \le &amp; \ 7 \\</span><br><span class="line">x,y &amp; \ge &amp; \ 0 \\</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\right.</span><br></pre></td></tr></table></figure>
-<p>在这两个式子中，x，y叫做决策变量。第一个式子叫做目标函数，第二个式子（s.t.）是约束条件。由于这两个式子都为线性函数，所以此类问题叫做线性规划问题。<br></font></p>
-<h2 id="3-线性规划问题在Matalb中如何求解"><a href="#3-线性规划问题在Matalb中如何求解" class="headerlink" title="3.线性规划问题在Matalb中如何求解"></a>3.线性规划问题在Matalb中如何求解</h2><h3 id="1-在Matalb中解决线性规划的标准形式为："><a href="#1-在Matalb中解决线性规划的标准形式为：" class="headerlink" title="1.在Matalb中解决线性规划的标准形式为："></a>1.在Matalb中解决线性规划的标准形式为：</h3><p><img src="9DCF520F35FC4EE984A51F417712F2E1" alt="image"><br></p>
-<p><font size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可利用<strong>linprog</strong>函数对此类问题进行求解，但是我们发现我们所列的目标函数与标准形式有所不同（在约束条件中亦然），则可以做出如下改变</p>
-<p>max z=4x+3y –&gt; min k=-4x-3y</p>
-<p>最后求得的k应该取其相反数。（z=-k）</p>
-<h3 id="2-linprog的用法"><a href="#2-linprog的用法" class="headerlink" title="2.linprog的用法"></a>2.linprog的用法</h3><pre><code>[x,fval]=linprog(c,A,b,Aeq,beq,lb,ub)</code></pre><p>x求得的结果为决策变量的取值，而fval为在该取值的情况下的最优解。</p>
-<h3 id="3-在Matalb中求解上面的例题："><a href="#3-在Matalb中求解上面的例题：" class="headerlink" title="3.在Matalb中求解上面的例题："></a>3.在Matalb中求解上面的例题：</h3><p>c=[-4000;-3000];</p>
-<p>A=[2 1;1 1;0 1];</p>
-<p>b=[10;8;7];</p>
-<p>则[x,fval]=linprog(c,A,b,[],[],zeros(1,2));</p>
-<p><img src="4914A1619499468DB632B293CDC55070" alt="image"></p>
-</font>
-
-
-
+<h2 id="2-线性规划问题的实例与定义。"><a href="#2-线性规划问题的实例与定义。" class="headerlink" title="2.线性规划问题的实例与定义。"></a>2.线性规划问题的实例与定义。</h2>
+        
       
 
       
