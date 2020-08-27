@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zzhangzz.github.io">
-  <title>ZzhBlog</title>
+  <title>关于JDK | ZzhBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZzhBlog">
-<meta property="og:url" content="https://zzhangzz.github.io/index.html">
+  <meta name="description" content="关于JDK你了解多少？JDK的介绍什么是JDK​      JDK（Java Development Kit）是Java的软件语言开发包。JDK是整个duJAVA的核心，包括了Java运行环境(JRE)，一堆Java工具（javac&#x2F;java&#x2F;jdb等）和Java基础的类库（即Java API 包括rt.jar）。 什么是JRK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于JDK">
+<meta property="og:url" content="https://zzhangzz.github.io/2020/08/27/%E5%85%B3%E4%BA%8EJDK/index.html">
 <meta property="og:site_name" content="ZzhBlog">
-<meta property="og:description" content="记录生活">
+<meta property="og:description" content="关于JDK你了解多少？JDK的介绍什么是JDK​      JDK（Java Development Kit）是Java的软件语言开发包。JDK是整个duJAVA的核心，包括了Java运行环境(JRE)，一堆Java工具（javac&#x2F;java&#x2F;jdb等）和Java基础的类库（即Java API 包括rt.jar）。 什么是JRK">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-27T09:19:18.286Z">
+<meta property="article:modified_time" content="2020-08-27T09:20:05.505Z">
 <meta property="article:author" content="zzh">
 <meta name="twitter:card" content="summary">
   
@@ -136,16 +138,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-关于JDK" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-关于JDK" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/27/%E5%85%B3%E4%BA%8EJDK/">关于JDK</a>
+    <h1 class="article-title" itemprop="name">
+      关于JDK
     </h1>
   
 
@@ -159,10 +159,48 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="关于JDK你了解多少？"><a href="#关于JDK你了解多少？" class="headerlink" title="关于JDK你了解多少？"></a>关于JDK你了解多少？</h1><h2 id="JDK的介绍"><a href="#JDK的介绍" class="headerlink" title="JDK的介绍"></a>JDK的介绍</h2><h3 id="什么是JDK"><a href="#什么是JDK" class="headerlink" title="什么是JDK"></a>什么是JDK</h3><p>​      JDK（Java Development Kit）是Java的软件语言开发包。JDK是整个duJAVA的核心，包括了Java运行环境(JRE)，一堆Java工具（javac/java/jdb等）和Java基础的类库（即Java API 包括rt.jar）。</p>
-<h3 id="什么是JRK"><a href="#什么是JRK" class="headerlink" title="什么是JRK"></a>什么是JRK</h3>
-        
+<h3 id="什么是JRK"><a href="#什么是JRK" class="headerlink" title="什么是JRK"></a>什么是JRK</h3><a id="more"></a>
+
+<p>​     JRE（Java Runtime Environment，Java运行环境），<strong>包含JVM标准实现及Java核心类库。</strong>JRE是Java运行环境，并不是一个开发环境，所以没有包含任何开发工具（如编译器和调试器）。</p>
+<h3 id="什么是JVM"><a href="#什么是JVM" class="headerlink" title="什么是JVM"></a>什么是JVM</h3><p>​       JVM是Java Virtual Machine（Java虚拟机）的缩写，是一个抽象的计算机，负责执行指令，还要管理数据、内存、和寄存器，JVM是一种用于计算设备的规范，它是<strong>一个虚构出来的计算机</strong>，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。</p>
+<h3 id="小提示"><a href="#小提示" class="headerlink" title="小提示"></a>小提示</h3><ul>
+<li><p>JVM是实现Java程序跨平台的关键部分。 </p>
+</li>
+<li><p>Java是编译性和解释型语言。Java程序，先进行编译生成一种字节码文件（.class），然后再对字节码文件进行解释进而生成机器码（计算机可识别的01代码），而<strong><em>解释</em></strong>这个过程需要在JVM上进行。不同的平台有不同的JVM，而即使在不同的JVM中，JVM都面向两个层面，一个是面向字节码的层面，另一个就是面向不同的操作系统层面，而在JVM面向字节码这一层面中是相同的，不同的仅仅是面向不同的操作系统的层面。</p>
+</li>
+<li><p>如果是仅仅用来运行Java代码，可以下载JRE（包括字节码检验器，丰富的类库，JVM），而如果想要开发Java程序，就需要下载JDK（包含了JRE，javac指令，java指令，等等），javac：可把java文件生成相应的字节码文件，java：可将字节码文件转换成机器码文件。</p>
+</li>
+</ul>
+<h2 id="JDK-1-8-的下载"><a href="#JDK-1-8-的下载" class="headerlink" title="JDK(1.8)的下载"></a>JDK(1.8)的下载</h2><p>   打开链接即可下载，百度网盘下载链接：<a href="https://pan.baidu.com/s/1XpGSiPYqOtinHl3m8Mrg-w" target="_blank" rel="noopener">https://pan.baidu.com/s/1XpGSiPYqOtinHl3m8Mrg-w</a><br>提取码：t87m</p>
+<h2 id="JDK的环境配置"><a href="#JDK的环境配置" class="headerlink" title="JDK的环境配置"></a>JDK的环境配置</h2><p>​       安装完JDK，启动Windows下的命令窗口，输入javac和java两个命令，结果显示“不是内部与外部命令”。所以我们还需要设置PATH环境变量（安装完之后，虽然在计算机中已经具有了javac、java两个命令，但是计算机不知道去哪里找这两个命令。）在主页面的<strong>此电脑</strong>右击属性——-&gt;高级系统设置———-&gt;环境变量，然后在系统变量中找到Path这个选项，编辑，添加，%JAVA_HOME%\bin;其中%JAVA_HOME%是你刚才安装JDK的路径，然后就可以了。然后再次进入<strong>命令行</strong>窗口输入java -version与JAVAC -version，返回的是相关版本后，不报错就说明我们的环境变量配置好了。</p>
+<h2 id="关于CLASSPATH"><a href="#关于CLASSPATH" class="headerlink" title="关于CLASSPATH"></a>关于CLASSPATH</h2><p>​     <strong>由于我给大家提供的是1.8版本所以不需要设置CLASSPATH环境变量。</strong></p>
+<p>​     如果大家下载的JDK版本是1.4版本之前的版本就还需要配置CLASSPATH环境变量。</p>
+<h3 id="配置CLASSPATH的原因"><a href="#配置CLASSPATH的原因" class="headerlink" title="配置CLASSPATH的原因"></a>配置CLASSPATH的原因</h3><p>​     当使用“java Java类名”命令来运行Java程序时，JRE要到哪里搜索Java类呢，很显然要到当前路径搜索，但是JDK1.4之前的版本不具备这个功能，在CLASSPATH中添加     <strong>.</strong>       来告诉JRE要到当前的路径搜索Java类，除此之外编译和运行Java程序还需要JDK中的lib路径下的dt.jar和tools.jar的两个文件。</p>
+<h3 id="配置CLASSPATH"><a href="#配置CLASSPATH" class="headerlink" title="配置CLASSPATH"></a>配置CLASSPATH</h3><p>​     在主页面的<strong>此电脑</strong>右击属性——-&gt;高级系统设置———-&gt;环境变量，然后在系统变量中找到CLASSPATH，然后编辑，在最后添加 .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar同样的%JAVA_HOME%代表JDK的安装路径。</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>撒浪嘿呦<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -171,16 +209,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/27/%E5%85%B3%E4%BA%8EJDK/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zzhangzz.github.io/2020/08/27/%E5%85%B3%E4%BA%8EJDK/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/21/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B9%8B%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数学建模之线性规划</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -200,158 +297,14 @@
 
 
 
-
   
-    <article id="post-数学建模之线性规划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/21/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B9%8B%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/">数学建模之线性规划</a>
-    </h1>
   
 
-        
-        <a href="/2020/08/21/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B9%8B%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" class="archive-article-date">
-  	<time datetime="2020-08-21T13:45:55.049Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h1><h2 id="1-什么是线性规划"><a href="#1-什么是线性规划" class="headerlink" title="1.什么是线性规划"></a>1.什么是线性规划</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><font size=3>在社会的日常生产实践中，经常会遇到如何利用有限的资源来安排生产，从而取得最大的经济效益的问题。这类问题在运筹学中叫做数学规划，而线性规划是数学规划中的一个重要的分支。</font></p>
-<h2 id="2-线性规划问题的实例与定义。"><a href="#2-线性规划问题的实例与定义。" class="headerlink" title="2.线性规划问题的实例与定义。"></a>2.线性规划问题的实例与定义。</h2>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/21/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B9%8B%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第一个博客测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/17/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/">博客测试</a>
-    </h1>
   
 
-        
-        <a href="/2020/06/17/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/" class="archive-article-date">
-  	<time datetime="2020-06-16T23:29:12.394Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Welcome-my-Blog"><a href="#Welcome-my-Blog" class="headerlink" title="Welcome my Blog"></a>Welcome my Blog</h1><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><table>
-<thead>
-<tr>
-<th>姓名</th>
-<th align="center">技能</th>
-<th align="right">排行</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>刘备</td>
-<td align="center">哭</td>
-<td align="right">大哥</td>
-</tr>
-<tr>
-<td>关羽</td>
-<td align="center">打</td>
-<td align="right">二哥</td>
-</tr>
-<tr>
-<td>张飞</td>
-<td align="center">骂</td>
-<td align="right">三弟</td>
-</tr>
-</tbody></table>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/17/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -374,8 +327,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
