@@ -16,7 +16,7 @@
 <meta property="og:description" content="正则表达式开学啦2020年9月6日，返回到了“想念已久”的校园。庆幸被子和垫子没有发霉。下午又晒了一遍，整理好了衣服还有桌子，还有打扫了打扫卫生。今年的任务感觉好多呀（学会Java，考驾照，教师资格证，数学建模…….）加油！ )https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;zzhangzz&#x2F;Demo&#x2F;master&#x2F;%E6%95%B4%E7%90%86%E5%AE%8C%E7%">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-06T08:33:00.144Z">
-<meta property="article:modified_time" content="2020-09-06T08:44:38.789Z">
+<meta property="article:modified_time" content="2020-09-06T10:35:00.198Z">
 <meta property="article:author" content="zzh">
 <meta name="twitter:card" content="summary">
   
@@ -196,6 +196,9 @@
 <td>匹配字符串的结束</td>
 </tr>
 </tbody></table>
+<h3 id="Java代码实现"><a href="#Java代码实现" class="headerlink" title="Java代码实现"></a>Java代码实现</h3><blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">package</span> text;</span><br><span class="line">&gt;<span class="keyword">import</span> java.util.regex.Pattern;   <span class="comment">//导入Pattern类</span></span><br><span class="line">&gt;<span class="keyword">import</span> java.util.regex.Matcher;   <span class="comment">//导入Matcher类</span></span><br><span class="line">&gt;<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Text</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">       String content = <span class="string">"v201851010**g"</span>; <span class="comment">//用于匹配的内容</span></span><br><span class="line"></span><br><span class="line">       Pattern pattern = Pattern.compile(<span class="string">"\\w+"</span>);  <span class="comment">//正则表达式书写的匹配器</span></span><br><span class="line">       Matcher str = pattern.matcher(content);    <span class="comment">//创建匹配给定输入与此模式的匹配器。 </span></span><br><span class="line">       <span class="keyword">while</span>(str.find())</span><br><span class="line">           System.out.println(str.group(<span class="number">0</span>));</span><br><span class="line">   &#125;</span><br><span class="line">&gt;&#125;</span><br><span class="line"></span><br><span class="line">&gt;输出：v201851010</span><br><span class="line">    g</span><br></pre></td></tr></table></figure>
+</blockquote>
 <h3 id="反义字符"><a href="#反义字符" class="headerlink" title="反义字符"></a>反义字符</h3><table>
 <thead>
 <tr>
@@ -216,6 +219,10 @@
 <td>匹配除\b（单词开始或者结束）以外的字符</td>
 </tr>
 </tbody></table>
+<h3 id="Java代码实现-1"><a href="#Java代码实现-1" class="headerlink" title="Java代码实现"></a>Java代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> text;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;   <span class="comment">//导入Pattern类</span></span><br><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;   <span class="comment">//导入Matcher类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Text</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        String content = <span class="string">"v201851010**g"</span>;  <span class="comment">//用于匹配的内容</span></span><br><span class="line"></span><br><span class="line">        Pattern pattern = Pattern.compile(<span class="string">"\\W+"</span>); <span class="comment">//正则表达式书写的匹配器</span></span><br><span class="line">        Matcher str = pattern.matcher(content);     <span class="comment">//创建匹配给定输入与此模式的匹配器。</span></span><br><span class="line">        <span class="keyword">while</span>(str.find())</span><br><span class="line">            System.out.println(str.group(<span class="number">0</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出：**</span><br></pre></td></tr></table></figure>
+
+
+
 <h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><table>
 <thead>
 <tr>
