@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zzhangzz.github.io">
-  <title>ZzhBlog</title>
+  <title>初始Java缓存实例 | ZzhBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZzhBlog">
-<meta property="og:url" content="https://zzhangzz.github.io/index.html">
+  <meta name="description" content="初始Java简单缓存实例​       缓存在很多场景下都是需要使用的。比如在需要一个值的过程和代价特别高的情况下，而且对这个值的需要不止一次的情况下，我们可能就需要考虑使用缓存了。 代码展示​      接下来让我们简单用数组实现缓存实例对象。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初始Java缓存实例">
+<meta property="og:url" content="https://zzhangzz.github.io/2020/09/20/%E5%88%9D%E5%A7%8BJava%E7%BC%93%E5%AD%98%E5%AE%9E%E4%BE%8B/index.html">
 <meta property="og:site_name" content="ZzhBlog">
-<meta property="og:description" content="记录生活">
+<meta property="og:description" content="初始Java简单缓存实例​       缓存在很多场景下都是需要使用的。比如在需要一个值的过程和代价特别高的情况下，而且对这个值的需要不止一次的情况下，我们可能就需要考虑使用缓存了。 代码展示​      接下来让我们简单用数组实现缓存实例对象。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-20T08:32:58.777Z">
+<meta property="article:modified_time" content="2020-09-20T08:33:27.595Z">
 <meta property="article:author" content="zzh">
 <meta name="twitter:card" content="summary">
   
@@ -136,16 +138,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-初始Java缓存实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-初始Java缓存实例" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/20/%E5%88%9D%E5%A7%8BJava%E7%BC%93%E5%AD%98%E5%AE%9E%E4%BE%8B/">初始Java缓存实例</a>
+    <h1 class="article-title" itemprop="name">
+      初始Java缓存实例
     </h1>
   
 
@@ -160,141 +160,45 @@
       
         <h2 id="初始Java简单缓存实例"><a href="#初始Java简单缓存实例" class="headerlink" title="初始Java简单缓存实例"></a>初始Java简单缓存实例</h2><p>​       缓存在很多场景下都是需要使用的。比如在需要一个值的过程和代价特别高的情况下，而且对这个值的需要不止一次的情况下，我们可能就需要考虑使用缓存了。</p>
 <h3 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h3><p>​      接下来让我们简单用数组实现缓存实例对象。</p>
-        
-      
+<a id="more"></a>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Test;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;                        <span class="comment">//声明Student类</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    Student(String name,<span class="keyword">int</span> age)&#123;       <span class="comment">//Student类的构造器</span></span><br><span class="line">        <span class="keyword">this</span>.name=name;</span><br><span class="line">        <span class="keyword">this</span>.age=age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;           <span class="comment">//用于访问类属性的访问器</span></span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;            <span class="comment">//重写Object类的toString方法</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name+<span class="string">"的年龄是:"</span>+<span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span></span>&#123; <span class="comment">//重写Object类的equals方法，用于判断两个Student对象是否相等</span></span><br><span class="line">        <span class="keyword">if</span>(obj==<span class="keyword">this</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(obj!=<span class="keyword">null</span> &amp;&amp; obj.getClass()==Student<span class="class">.<span class="keyword">class</span>)</span>&#123;</span><br><span class="line">            Student student = (Student) obj;</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>.getName().equals(student.getName()))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentCache</span></span>&#123;              <span class="comment">//用于缓存Student的类</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> MAX_VALUE=<span class="number">10</span>;    <span class="comment">//数组的最大空间</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> StudentCache[] cache = <span class="keyword">new</span> StudentCache[MAX_VALUE];  <span class="comment">//用于缓存的数组</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> pos = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Student stu;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">StudentCache</span><span class="params">(Student stu)</span></span>&#123;     <span class="comment">//定义缓存类的构造器</span></span><br><span class="line">        <span class="keyword">this</span>.stu=stu;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Student <span class="title">getStudent</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stu;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> StudentCache <span class="title">valueof</span><span class="params">(Student stu)</span></span>&#123;   <span class="comment">//用于查找与存储Student的实例对象</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;MAX_VALUE;i++)&#123;</span><br><span class="line">         <span class="keyword">if</span>(cache[i]!=<span class="keyword">null</span>&amp;&amp;cache[i].getStudent().equals(stu))&#123; <span class="comment">//判断数组中是否已存在同一对象</span></span><br><span class="line">                <span class="keyword">return</span> cache[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(pos==MAX_VALUE)&#123;    <span class="comment">//判断缓存的实例对象是否已经超过了缓存最大值</span></span><br><span class="line">            cache[<span class="number">0</span>]=<span class="keyword">new</span> StudentCache(stu);</span><br><span class="line">            pos=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            cache[pos++]=<span class="keyword">new</span> StudentCache(stu);  <span class="comment">//往缓存数组中添加数据</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cache[pos-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo1</span> </span>&#123;        <span class="comment">//测试类</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student s1 = <span class="keyword">new</span> Student(<span class="string">"张三"</span>,<span class="number">12</span>);</span><br><span class="line">        Student s2 = <span class="keyword">new</span> Student(<span class="string">"张三"</span>,<span class="number">20</span>);</span><br><span class="line">        StudentCache v1 = StudentCache.valueof(s1);</span><br><span class="line">        StudentCache v2 = StudentCache.valueof(s2);</span><br><span class="line">        System.out.println(v1==v2);</span><br><span class="line">        System.out.println(v1.getStudent().toString());</span><br><span class="line">        System.out.println(v2.getStudent().toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">输出结果：</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">张三的年龄是:12</span></span><br><span class="line"><span class="comment">张三的年龄是:12</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/20/%E5%88%9D%E5%A7%8BJava%E7%BC%93%E5%AD%98%E5%AE%9E%E4%BE%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-==与equals()的对比" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/20/==%E4%B8%8Eequals()%E7%9A%84%E5%AF%B9%E6%AF%94/">==与equals()的对比</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/20/==%E4%B8%8Eequals()%E7%9A%84%E5%AF%B9%E6%AF%94/" class="archive-article-date">
-  	<time datetime="2020-09-20T08:31:57.255Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Java中的”-”与”equals-”的对比，Java的字符串常量池概念"><a href="#Java中的”-”与”equals-”的对比，Java的字符串常量池概念" class="headerlink" title="Java中的”==”与”equals()”的对比，Java的字符串常量池概念"></a>Java中的”==”与”equals()”的对比，Java的字符串常量池概念</h2><h3 id="Java中的”-”在判断基本类型数据时"><a href="#Java中的”-”在判断基本类型数据时" class="headerlink" title="Java中的”==”在判断基本类型数据时"></a>Java中的”==”在判断基本类型数据时</h3><p>当比较基本数据类型的时候比较的是数值。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/20/==%E4%B8%8Eequals()%E7%9A%84%E5%AF%B9%E6%AF%94/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java多态" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/16/Java%E5%A4%9A%E6%80%81/">Java多态</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/16/Java%E5%A4%9A%E6%80%81/" class="archive-article-date">
-  	<time datetime="2020-09-16T02:38:31.570Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Java的多态"><a href="#Java的多态" class="headerlink" title="Java的多态"></a>Java的多态</h1><h2 id="多态的含义"><a href="#多态的含义" class="headerlink" title="多态的含义"></a>多态的含义</h2><p>多态：就是同一个行为具有不同的表现形式或形态的能力。</p>
-<h2 id="多态存在的三个必要条件"><a href="#多态存在的三个必要条件" class="headerlink" title="多态存在的三个必要条件"></a>多态存在的三个必要条件</h2><ul>
-<li>继承</li>
-<li>重写</li>
-<li>向上转型</li>
+<h3 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h3><ul>
+<li><strong>问</strong>：为什么“==”判断时会输出true</li>
+<li><strong>答</strong>：当“==”作用于两个引用类型数据，只有他们引用同一对象时，才会返回true。</li>
+<li><strong>问</strong>：为什么v1与v2会引用同一对象呢</li>
+<li><strong>答</strong>：当v1存储时，缓存数组中还没有元素，所以会把数据保存在cache[0]中，当v2存储时，会检查缓存数组，这时发现数组中存有v1，而这两个对象“姓名”相同，“年龄”不同，而我们重写了equals方法，并且规定当“姓名”时，就可以认为这两个数组相同，所以，直接将v2引用变量指向v1指向的内容。</li>
 </ul>
-<h2 id="多态的实例（Java）"><a href="#多态的实例（Java）" class="headerlink" title="多态的实例（Java）"></a>多态的实例（Java）</h2>
-        
+<h3 id="Integer中的缓存"><a href="#Integer中的缓存" class="headerlink" title="Integer中的缓存"></a>Integer中的缓存</h3><p>在Integer中同样存在缓存机制。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Integer i1 = <span class="keyword">new</span> Integer(<span class="number">6</span>);</span><br><span class="line">        Integer i2 = <span class="keyword">new</span> Integer(<span class="number">6</span>);</span><br><span class="line">        Integer j1 = Integer.valueOf(<span class="number">6</span>);</span><br><span class="line">        Integer j2 = Integer.valueOf(<span class="number">6</span>);</span><br><span class="line">        System.out.println(i1==i2);</span><br><span class="line">        System.out.println(j1==j2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">结果输出：</span></span><br><span class="line"><span class="comment">false</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p>结果发现：</p>
+<p><strong><em>当采用valueof()方法创建对象时，会采用缓存的方法创建对象。</em></strong></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>撒浪嘿呦<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -303,16 +207,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/16/Java%E5%A4%9A%E6%80%81/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zzhangzz.github.io/2020/09/20/%E5%88%9D%E5%A7%8BJava%E7%BC%93%E5%AD%98%E5%AE%9E%E4%BE%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/20/==%E4%B8%8Eequals()%E7%9A%84%E5%AF%B9%E6%AF%94/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">==与equals()的对比</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -332,466 +295,14 @@
 
 
 
-
-  
-    <article id="post-Java方法的重写与重载" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/12/Java%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD/">Java方法的重写与重载</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/12/Java%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD/" class="archive-article-date">
-  	<time datetime="2020-09-12T03:02:57.634Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Java方法的重写与重载"><a href="#Java方法的重写与重载" class="headerlink" title="Java方法的重写与重载"></a>Java方法的重写与重载</h1><p>​       方法重载是一个类的多态性表现,而方法重写是子类与父类的一种多态性表现。</p>
-<h2 id="关于重写"><a href="#关于重写" class="headerlink" title="关于重写"></a>关于重写</h2><blockquote>
-<p>​      重写是子类对父类的允许访问的方法的实现过程进行重新编写返回值和形参都不能改变。</p>
-<p>​       但是重写方法不能抛出新的检查异常或者比被重写方法申明更加宽泛的异常。</p>
-</blockquote>
-<p>例如：</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/12/Java%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99%E4%B8%8E%E9%87%8D%E8%BD%BD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java异常处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/08/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">Java异常处理</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/08/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-09-08T13:09:46.219Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Java异常处理"><a href="#Java异常处理" class="headerlink" title="Java异常处理"></a>Java异常处理</h1><h2 id="相关的关键字"><a href="#相关的关键字" class="headerlink" title="相关的关键字"></a>相关的关键字</h2><h3 id="try-和-catch"><a href="#try-和-catch" class="headerlink" title="try 和 catch"></a>try 和 catch</h3><p>​        使用 try 和 catch 关键字可以捕获异常。try/catch 代码块放在异常可能发生的地方。try/catch代码块中的代码称为保护代码</p>
-<p>​        catch 语句包含要捕获异常类型的声明。当保护代码块中发生一个异常时，try 后面的 catch 块就会被检查。如果发生的异常包含在 catch 块中，异常会被传递到该 catch 块，这和传递一个参数到方法是一样。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/08/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-关于Java流(Stream)、文件(File)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/07/%E5%85%B3%E4%BA%8EJava%E6%B5%81(Stream)%E3%80%81%E6%96%87%E4%BB%B6(File)/">关于Java流(Stream)、文件(File)</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/07/%E5%85%B3%E4%BA%8EJava%E6%B5%81(Stream)%E3%80%81%E6%96%87%E4%BB%B6(File)/" class="archive-article-date">
-  	<time datetime="2020-09-07T12:23:25.130Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Java流-Stream-、文件-File"><a href="#Java流-Stream-、文件-File" class="headerlink" title="Java流(Stream)、文件(File)"></a>Java流(Stream)、文件(File)</h1><h2 id="字节流与字符流"><a href="#字节流与字符流" class="headerlink" title="字节流与字符流"></a>字节流与字符流</h2><p>​     所有继承Writer类的都是字符输出,所有继承Reader类的都是字符输入.继承OutputStream和InputStream分别是字节输zhi出和字节输入.而System.in与System.out，这两都是字节流.</p>
-<h2 id="字节流与字符流的区别"><a href="#字节流与字符流的区别" class="headerlink" title="字节流与字符流的区别"></a>字节流与字符流的区别</h2><p>​       字节流与字符流主要的区别是他们的的处理方式。字节流是最基本的，所有的InputStream和OutputStream的子类都是,主要用在处理二进制数据，它是按字节来处理的，但实际中很多的数据是文本，又提出了字符流的概念，这两个之间通过 InputStreamReader,OutputStreamWriter来关联，实际上是通过byte[]和String来关联，在实际开发中出现的汉字问题实际上都是在字符流和字节流之间转化不统一而造成的，在从字节流转化为字符流时，实际上就是byte[]转化为String，在从字节流转换成字符流时，实际上就是String转换为byte[]。</p>
-<h2 id="从控制台获取输入"><a href="#从控制台获取输入" class="headerlink" title="从控制台获取输入"></a>从控制台获取输入</h2><h3 id="第一种方式："><a href="#第一种方式：" class="headerlink" title="第一种方式："></a>第一种方式：</h3>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/07/%E5%85%B3%E4%BA%8EJava%E6%B5%81(Stream)%E3%80%81%E6%96%87%E4%BB%B6(File)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-正则表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/06/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/06/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-09-06T08:33:00.144Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h3 id="开学啦"><a href="#开学啦" class="headerlink" title="开学啦"></a>开学啦</h3><p>2020年9月6日，返回到了“想念已久”的校园。庆幸被子和垫子没有发霉。下午又晒了一遍，整理好了衣服还有桌子，还有打扫了打扫卫生。今年的任务感觉好多呀（学会Java，考驾照，教师资格证，数学建模…….）加油！</p>
-<p><img src="" alt="整理后的桌面">)<a href="https://raw.githubusercontent.com/zzhangzz/Demo/master/整理完的桌面.jpg" target="_blank" rel="noopener">https://raw.githubusercontent.com/zzhangzz/Demo/master/%E6%95%B4%E7%90%86%E5%AE%8C%E7%9A%84%E6%A1%8C%E9%9D%A2.jpg</a></p>
-<p>感觉还不是特别好，，，啊哈哈哈哈。</p>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/06/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MySQL&amp;Navicat的下载与安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/01/MySQL&Navicat%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/">MySQL&amp;Navicat的下载与安装</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/01/MySQL&Navicat%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2020-09-01T00:41:34.235Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="MySQL-amp-Navicat-12的下载与安装"><a href="#MySQL-amp-Navicat-12的下载与安装" class="headerlink" title="MySQL &amp; Navicat 12的下载与安装"></a>MySQL &amp; Navicat 12的下载与安装</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    想要从事后端开发，数据库一定是一定要深入学习的，后端开发会将用户的相关信息保存数据库中。今天我们先不讲解数据库的知识，先把数据库的软件下载到本地(<strong>我选用的是MySQL是一款轻量级的数据库软件</strong>)，由于MySQL只能从命令行进行操作，比较繁琐，所以搭配Navicat for MySQL的可视化、图形化操作，相对便捷。我昨天也捣鼓了一个多小时才安装成功(哭辽~)，接下来我把正确的步骤介绍给大家，话不多说，让我们进入正题。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/01/MySQL&Navicat%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-关于JDK" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/27/%E5%85%B3%E4%BA%8EJDK/">关于JDK</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/27/%E5%85%B3%E4%BA%8EJDK/" class="archive-article-date">
-  	<time datetime="2020-08-27T09:19:18.286Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="关于JDK你了解多少？"><a href="#关于JDK你了解多少？" class="headerlink" title="关于JDK你了解多少？"></a>关于JDK你了解多少？</h1><h2 id="JDK的介绍"><a href="#JDK的介绍" class="headerlink" title="JDK的介绍"></a>JDK的介绍</h2><h3 id="什么是JDK"><a href="#什么是JDK" class="headerlink" title="什么是JDK"></a>什么是JDK</h3><p>​      JDK（Java Development Kit）是Java的软件语言开发包。JDK是整个duJAVA的核心，包括了Java运行环境(JRE)，一堆Java工具（javac/java/jdb等）和Java基础的类库（即Java API 包括rt.jar）。</p>
-<h3 id="什么是JRK"><a href="#什么是JRK" class="headerlink" title="什么是JRK"></a>什么是JRK</h3>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/27/%E5%85%B3%E4%BA%8EJDK/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数学建模之线性规划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/21/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B9%8B%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/">数学建模之线性规划</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/21/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B9%8B%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" class="archive-article-date">
-  	<time datetime="2020-08-21T13:45:55.049Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h1><h2 id="1-什么是线性规划"><a href="#1-什么是线性规划" class="headerlink" title="1.什么是线性规划"></a>1.什么是线性规划</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><font size=3>在社会的日常生产实践中，经常会遇到如何利用有限的资源来安排生产，从而取得最大的经济效益的问题。这类问题在运筹学中叫做数学规划，而线性规划是数学规划中的一个重要的分支。</font></p>
-<h2 id="2-线性规划问题的实例与定义。"><a href="#2-线性规划问题的实例与定义。" class="headerlink" title="2.线性规划问题的实例与定义。"></a>2.线性规划问题的实例与定义。</h2>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/21/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E4%B9%8B%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -814,8 +325,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
